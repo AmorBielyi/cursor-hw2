@@ -24,41 +24,41 @@ import java.util.Set;
 
 public class Main {
 
-     private static void printArr(Integer[] arr){
+    private static void printArr(Integer[] arr) {
         for (int i = 0; i < arr.length; i++)
             System.out.printf("arr[%d] %d\n", i, arr[i]);
     }
 
-    private static int calcArrPositiveSum(Integer[] arr){
-         int sum = 0;
-         for(int elem : arr)
-             if (elem > 0)
-                 sum += elem;
+    private static int getArrPositiveSum(Integer[] arr) {
+        int sum = 0;
+        for (int elem : arr)
+            if (elem > 0)
+                sum += elem;
 
-         return sum;
+        return sum;
     }
 
-    private static float calcArrAvg(Integer[] arr){
-         int sum = calcArrPositiveSum(arr);
-         return  (float)sum / (float) arr.length;
+    private static float getArrAvg(Integer[] arr) {
+        int sum = getArrPositiveSum(arr);
+        return (float) sum / (float) arr.length;
     }
 
-    private static void zeroesDuplicatedValues(Integer[] arr){
+    private static void zeroesDuplicatedValues(Integer[] arr) {
         Set<Integer> duplicated = new HashSet<>();
 
-         for (int i = 0; i < arr.length; i++){
-             if (duplicated.contains(arr[i]))
-                 arr[i] = 0;
-             else
-                 duplicated.add(arr[i]);
-         }
+        for (int i = 0; i < arr.length; i++) {
+            if (duplicated.contains(arr[i]))
+                arr[i] = 0;
+            else
+                duplicated.add(arr[i]);
+        }
     }
 
     public static void main(String[] args) {
-	    // Task 1
+        // Task 1
         System.out.println("*** Task 1 ***");
 
-        Integer[] A = new Integer[]{2,3,1,7,11};
+        Integer[] A = new Integer[]{2, 3, 1, 7, 11};
 
         System.out.println("Array before reverse order sort");
         printArr(A);
@@ -70,19 +70,19 @@ public class Main {
         // Task 2
         System.out.println("*** Task 2 ***");
 
-        Integer[] B = new Integer[]{-1,5,11,515,33,-12,6,9,0,-3,-600};
+        Integer[] B = new Integer[]{-1, 5, 11, 515, 33, -12, 6, 9, 0, -3, -600};
         System.out.println("Array with integers to sum");
         printArr(B);
-        System.out.printf("Sum of all positive elements of it: %d\n", calcArrPositiveSum(B));
+        System.out.printf("Sum of all positive elements of it: %d\n", getArrPositiveSum(B));
 
         // Task 3
         System.out.println("*** Task 3 ***");
         System.out.println("Array with integers to avg");
         printArr(A);
-        System.out.printf("Average of array is: %f\n", calcArrAvg(A));
+        System.out.printf("Average of array is: %f\n", getArrAvg(A));
 
         // Task 4
-        Integer[] C = new Integer[]{3,2,3,1,4,2,8,3};
+        Integer[] C = new Integer[]{3, 2, 3, 1, 4, 2, 8, 3};
         System.out.println("*** Task 4 ***");
         System.out.println("Array with integers to zeroes duplicated values");
         printArr(C);
